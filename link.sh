@@ -1,4 +1,12 @@
-ln -sf ./.vimrc $HOME/.vimrc
-ln -sf ./.tmux.conf.local $HOME/.tmux.conf.local
-ln -sf ./.tmux.conf $HOME/.tmux.conf
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+
+cd $DIR
+ln -sf $DIR/.vimrc $HOME/.vimrc
+ln -sf $DIR/.tmux.conf.local $HOME/.tmux.conf.local
+ln -sf $DIR/.tmux.conf $HOME/.tmux.conf
+
+
+
 
