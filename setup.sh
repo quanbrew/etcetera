@@ -1,4 +1,4 @@
-NOW=$(dirname $0)
+NOW=$(cd `dirname $0`; pwd)
 cd $NOW
 git pull
 git submodule init
