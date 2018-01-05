@@ -7,7 +7,7 @@ filetype plugin on
 filetype plugin indent on
 
 
-
+set number
 set autochdir
 set history=2000
 set nobackup
