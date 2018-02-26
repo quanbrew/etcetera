@@ -6,32 +6,30 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-
 set number
 set autochdir
-set history=2000
+set history=2048
 set nobackup
 set noswapfile
 set autoread
 
 set cursorline
-
 set nowrap
+
 set novisualbell
 set noerrorbells
 
 set list
 set listchars=tab:>-,trail:-
+set showcmd " display incomplete commands
+set showmode " display current modes
 
-
-set showcmd                     " display incomplete commands
-set showmode                    " display current modes
 
 set shiftwidth=2
-set expandtab
+set tabstop=2
 set softtabstop=2
-set smarttab
-set shiftround
+" set smarttab
+set shiftround " 缩进取整
 
 set hlsearch
 set incsearch
@@ -40,7 +38,7 @@ set smartcase
 
 
 set completeopt=longest,menu
-set wildmenu                           " show a navigable menu for tab completion"
+set wildmenu " show a navigable menu for tab completion
 set wildmode=longest,list,full
 set wildignore=*.o,*~,*.pyc,*.class
 
