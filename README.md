@@ -5,7 +5,7 @@ This project includes [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and
 ## Install and update
 
 ```shell
-git clone https://github.com/tioover/etcetera.git .etcetera 
+git clone https://github.com/quanbrew/etcetera.git .etcetera 
 ./.etcetera/setup.sh
 ```
 
