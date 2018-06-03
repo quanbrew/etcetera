@@ -1,5 +1,4 @@
 set -ex
-CURRENT=$(pwd)
 ETCETERA=$(cd `dirname $0`; pwd)
 cd $ETCETERA
 git pull
@@ -16,4 +15,3 @@ ln -sf $ETCETERA/.vimrc $HOME/.vimrc
 # tmux
 ln -sf $ETCETERA/.tmux.conf.local $HOME/.tmux.conf.local
 ln -sf $ETCETERA/.tmux/.tmux.conf $HOME/.tmux.conf
-cd $CURRENT
