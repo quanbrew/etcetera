@@ -6,7 +6,7 @@
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git pip
 )
 
 # Uncomment the following line to use case-sensitive completion.
@@ -35,7 +35,6 @@ plugins=(
 
 
 # User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

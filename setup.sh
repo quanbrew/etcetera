@@ -7,7 +7,7 @@ git submodule update
 # ZSH
 ln -sf $ETCETERA/oh-my-zsh $HOME/.oh-my-zsh
 ln -sf $ETCETERA/.zshrc $HOME/.zshrc
-ln -sf $ETCETERA/.zshrc.local.sh $HOME/.zshrc.local.sh
+cp -n $ETCETERA/.zshrc.local.sh $HOME/.zshrc.local.sh
 
 # Vim
 ln -sf $ETCETERA/.vimrc $HOME/.vimrc
