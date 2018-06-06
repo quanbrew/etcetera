@@ -4,6 +4,7 @@ import os
 import subprocess
 import shutil
 
+
 from os.path import join
 from pathlib import Path
 
@@ -16,6 +17,7 @@ LINK_PATHS = [
     '.zshrc',
     '.oh-my-zsh',
     '.tmux.conf.local',
+    '.vim',
 ]
 
 COPY_FILES = [
@@ -35,6 +37,18 @@ def remove():
     for item in COPY_FILES:
         run(['rm', join(HOME, item)])
 
+
+def copy(src, dest):
+    print('copy {} to {}'.format(src, dest))
+    shutil.copyfile(src, dest)
+
+
+def install_vim_plug():
+    src = join(ETC_PATH, 'vim-plug', 'plug.vim')
+    dest = join(ETC_PATH, '.vim', 'autoload', 'plug.vim')
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    copy(src, dest)
+
 def main():
     parser = argparse.ArgumentParser(description='Dot files manager')
     parser.add_argument('--rm', action='store_true', dest='remove', help='Unlink and remove dot files install by etcetera')
@@ -43,20 +57,22 @@ def main():
     if args.remove:
         remove()
         return
-    
+
     run(['git', 'pull'])
     run(['git', 'submodule', 'init'])
     run(['git', 'submodule', 'update'])
+    install_vim_plug()
 
     for item in LINK_PATHS:
-        run(['ln', '-sf', join(ETC_PATH, item), join(HOME, item)])
+        run(['ln', '-sfn', join(ETC_PATH, item), join(HOME, item)])
 
     for item in COPY_FILES:
         src = join(ETC_PATH, item)
         dest = join(HOME, item)
         if not os.path.exists(dest):
-            print(f'copy {src} to {dest}')
-            shutil.copyfile(src, dest)
+            copy(src, dest)
+        else:
+            print('file {} exists, skip'.format(src))
 
 
 if __name__ == '__main__':

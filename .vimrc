@@ -52,3 +52,22 @@ set helplang=cn
 set backspace=indent,eol,start  " make that backspace key work the way it should
 set whichwrap+=<,>,h,l
 
+
+if has('gui_running')
+  set guifont=Iosevka:h16
+endif
+
+
+" https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+" Plug 'w0rp/ale'
+call plug#end()
+
+" ale help configure 
+" https://github.com/w0rp/ale#generating-vim-help-files
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
