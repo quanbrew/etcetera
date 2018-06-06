@@ -4,7 +4,14 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="random"
+
+#ZSH_THEME="random"
+
+if [[ -n $SSH_CONNECTION ]]; then
+  ZSH_THEME="murilasso"
+else
+  ZSH_THEME="refined"
+fi
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
