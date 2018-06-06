@@ -5,7 +5,6 @@ import subprocess
 import shutil
 
 
-from os.path import join
 from pathlib import Path
 
 ETC_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -25,6 +24,10 @@ COPY_FILES = [
 ]
 
 
+def join(*args):
+    os.path.join(*list(map(str, args)))
+
+
 def run(command, cwd=ETC_PATH):
     print(command)
     subprocess.run(command, cwd=cwd, stdout=subprocess.PIPE)
@@ -40,13 +43,13 @@ def remove():
 
 def copy(src, dest):
     print('copy {} to {}'.format(src, dest))
-    shutil.copyfile(src, dest)
+    shutil.copyfile(str(src), str(dest))
 
 
 def install_vim_plug():
     src = join(ETC_PATH, 'vim-plug', 'plug.vim')
     dest = join(ETC_PATH, '.vim', 'autoload', 'plug.vim')
-    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    os.makedirs(os.path.dirname(str(dest)), exist_ok=True)
     copy(src, dest)
 
 def main():
