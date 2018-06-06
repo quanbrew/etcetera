@@ -25,7 +25,7 @@ COPY_FILES = [
 
 
 def join(*args):
-    os.path.join(*list(map(str, args)))
+    return os.path.join(*list(map(str, args)))
 
 
 def run(command, cwd=ETC_PATH):
