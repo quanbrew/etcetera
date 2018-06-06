@@ -1,1 +1,0 @@
-rm $HOME/.vimrc $HOME/.tmux.conf.local $HOME/.tmux.conf $HOME/.zshrc $HOME/.oh-my-zsh

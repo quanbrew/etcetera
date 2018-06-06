@@ -6,11 +6,11 @@ This project includes [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and
 
 ```shell
 git clone https://github.com/quanbrew/etcetera.git .etcetera 
-./.etcetera/setup.sh
+./.etcetera/etcetera.py
 ```
 
 ### Remove all configure
 
 ```shell
-./.etcetera/unlink.sh
+./.etcetera/etcetera.py --rm
 ```
