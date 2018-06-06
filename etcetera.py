@@ -49,7 +49,7 @@ def copy(src, dest):
 def install_vim_plug():
     src = join(ETC_PATH, 'vim-plug', 'plug.vim')
     dest = join(ETC_PATH, '.vim', 'autoload', 'plug.vim')
-    run(['mkdir', '-p', dest])
+    run(['mkdir', '-p', os.path.dirname(dest)])
     copy(src, dest)
 
 def main():
