@@ -1,1 +1,3 @@
 .vim/autoload/plug.vim
+.vim/doc/
+.vim/plugged/

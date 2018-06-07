@@ -6,7 +6,7 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-set number
+" set number
 set autochdir
 set history=2048
 set nobackup
@@ -29,7 +29,7 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 " set smarttab
-set shiftround " 缩进取整
+set shiftround
 
 set hlsearch
 set incsearch
@@ -47,27 +47,98 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set helplang=cn
 
+" line number
+" auto switch between relative and normal
+set relativenumber number
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber nonumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber number
+augroup END
+
 
 " others
 set backspace=indent,eol,start  " make that backspace key work the way it should
 set whichwrap+=<,>,h,l
 
+" shortcut key maps
 
+let mapleader=" "
+
+" <leader>n remove line number display
+nmap <leader>n :set nonumber norelativenumber<CR>
+
+" Force quit
+nmap <leader>q :q!<CR>
+
+" Write with sudo
+" You must have nopassword permission
+nmap <leader>w :w !sudo tee %<CR>
+
+" commentary.vim
+nmap <leader>/ <Plug>CommentaryLine
+xmap <leader>/ <Plug>Commentary
+omap <leader>/ <Plug>Commentary
+
+" Toggle tagbar
+nmap <leader>t :TagbarToggle<CR>
+
+" GUI
 if has('gui_running')
   set guifont=Iosevka:h16
+  set guioptions=
 endif
 
 
+" Plugin
+
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
-" Plug 'w0rp/ale'
+  Plug 'w0rp/ale'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'scrooloose/nerdtree'
+  Plug 'majutsushi/tagbar'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-surround'
+  Plug 'kien/rainbow_parentheses.vim'
+  Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
+" Airline
+let g:airline_powerline_fonts = 1
 
-" ale help configure 
+" RAINBOW PARENTHESES
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'SteelBlue1'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'SteelBlue1'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'SteelBlue1'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'SteelBlue1'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" Generate documentation tags automatically
 " https://github.com/w0rp/ale#generating-vim-help-files
 " Load all plugins now.
-" Plugins need to be added to runtimepath before helptags can be generated.
 packloadall
 " Load all of the helptags now, after plugins have been loaded.
-" All messages and errors will be ignored.
 silent! helptags ALL
