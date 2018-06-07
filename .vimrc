@@ -23,6 +23,7 @@ set list
 set listchars=tab:>-,trail:-
 set showcmd " display incomplete commands
 set showmode " display current modes
+set termguicolors
 
 
 " Ident settings
@@ -49,6 +50,7 @@ set wildignore=*.o,*~,*.pyc,*.class
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set helplang=cn
+set mouse=a
 
 " line number
 " auto switch between relative and normal
@@ -117,6 +119,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'sonph/onehalf', {'rtp': 'vim/'}
+  " Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 call plug#end()
 
 " Airline
@@ -148,6 +151,18 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" Color scheme
+syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+let g:airline_theme='onehalflight'
+
+" Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
 " Generate documentation tags automatically
 " https://github.com/w0rp/ale#generating-vim-help-files
 " Load all plugins now.
@@ -156,9 +171,3 @@ packloadall
 silent! helptags ALL
 
 
-" Color scheme
-syntax on
-set t_Co=256
-set cursorline
-colorscheme onehalfdark
-let g:airline_theme='onehalflight'

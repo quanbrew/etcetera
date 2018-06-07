@@ -9,8 +9,11 @@ git clone https://github.com/quanbrew/etcetera.git .etcetera
 ./.etcetera/etcetera.py
 ```
 
+Open vim (at least version 8): `PlugInstall`
+
 ### Remove all configure
 
 ```shell
 ./.etcetera/etcetera.py --rm
 ```
+
