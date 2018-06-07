@@ -25,10 +25,13 @@ set showcmd " display incomplete commands
 set showmode " display current modes
 
 
+" Ident settings
+" http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-" set smarttab
+set smartindent
+set smarttab
 set shiftround
 
 set hlsearch
@@ -61,12 +64,16 @@ augroup END
 set backspace=indent,eol,start  " make that backspace key work the way it should
 set whichwrap+=<,>,h,l
 
-" shortcut key maps
+" Shortcut Key Maps
 
 let mapleader=" "
 
 " <leader>n remove line number display
 nmap <leader>n :set nonumber norelativenumber<CR>
+
+
+" Paste mode
+nmap <leader>p :set paste<CR>
 
 " Force quit
 nmap <leader>q :q!<CR>
@@ -84,11 +91,14 @@ omap <leader>/ <Plug>Commentary
 nmap <leader>t :TagbarToggle<CR>
 
 " GUI
+" font is https://github.com/be5invis/Sarasa-Gothic
 if has('gui_running')
-  set guifont=Iosevka:h16
+  set guifont=Sarasa\ Term\ SC\ 12
+endif
+if has("gui_macvim")
+  set guifont=Sarasa\ Term\ SC:h16
   set guioptions=
 endif
-
 
 " Plugin
 
@@ -106,7 +116,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'sonph/onehalf', {'rtp': 'vim/'}
 call plug#end()
+
 " Airline
 let g:airline_powerline_fonts = 1
 
@@ -142,3 +154,11 @@ au Syntax * RainbowParenthesesLoadBraces
 packloadall
 " Load all of the helptags now, after plugins have been loaded.
 silent! helptags ALL
+
+
+" Color scheme
+syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+let g:airline_theme='onehalflight'
