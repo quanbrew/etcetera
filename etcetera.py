@@ -64,6 +64,7 @@ def main():
     run(['git', 'pull'])
     run(['git', 'submodule', 'init'])
     run(['git', 'submodule', 'update'])
+    run(['cp', join(ETC_PATH, '.tmux', '.tmux.conf'), join(ETC_PATH, '.tmux.conf')])
     install_vim_plug()
 
     for item in LINK_PATHS:

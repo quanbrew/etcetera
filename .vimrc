@@ -28,9 +28,6 @@ set termguicolors
 
 " Ident settings
 " http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
 set smartindent
 set smarttab
 set shiftround
@@ -50,7 +47,6 @@ set wildignore=*.o,*~,*.pyc,*.class
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set helplang=cn
-set mouse=a
 
 " line number
 " auto switch between relative and normal
@@ -112,12 +108,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'flazz/vim-colorschemes'
   Plug 'scrooloose/nerdtree'
   Plug 'majutsushi/tagbar'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'tpope/vim-sleuth'
   Plug 'sonph/onehalf', {'rtp': 'vim/'}
   " Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 call plug#end()
@@ -155,9 +153,9 @@ au Syntax * RainbowParenthesesLoadBraces
 syntax on
 set t_Co=256
 set cursorline
-colorscheme onehalfdark
-let g:airline_theme='onehalflight'
-
+"colorscheme onehalfdark
+"let g:airline_theme='onehalflight'
+colorscheme gruvbox
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
