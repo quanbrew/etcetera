@@ -24,7 +24,6 @@ set listchars=tab:→\ ,extends:›,precedes:‹,nbsp:␣,trail:·
 
 set showcmd " display incomplete commands
 set showmode " display current modes
-set termguicolors
 
 
 " Ident settings
