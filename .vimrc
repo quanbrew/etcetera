@@ -6,7 +6,6 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-" set number
 set autochdir
 set history=2048
 set nobackup
@@ -20,7 +19,9 @@ set novisualbell
 set noerrorbells
 
 set list
-set listchars=tab:>-,trail:-
+set showbreak=↪\
+set listchars=tab:→\ ,extends:›,precedes:‹,nbsp:␣,trail:·
+
 set showcmd " display incomplete commands
 set showmode " display current modes
 set termguicolors
@@ -90,12 +91,11 @@ nmap <leader>t :TagbarToggle<CR>
 
 " GUI
 " font is https://github.com/be5invis/Sarasa-Gothic
-if has('gui_running')
-  set guifont=Sarasa\ Term\ SC\ 12
-endif
 if has("gui_macvim")
   set guifont=Sarasa\ Term\ SC:h16
   set guioptions=
+elseif has("gui_macvim")
+  set guifont=Sarasa\ Term\ SC\ 12
 endif
 
 " Plugin
@@ -152,6 +152,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " Color scheme
 syntax on
 set t_Co=256
+set background=dark
 set cursorline
 "colorscheme onehalfdark
 "let g:airline_theme='onehalflight'
