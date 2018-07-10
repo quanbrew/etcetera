@@ -93,7 +93,7 @@ nmap <leader>t :TagbarToggle<CR>
 if has("gui_macvim")
   set guifont=Sarasa\ Term\ SC:h16
   set guioptions=
-elseif has("gui_macvim")
+elseif has("gui_running")
   set guifont=Sarasa\ Term\ SC\ 12
 endif
 
@@ -160,6 +160,10 @@ colorscheme gruvbox
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+" ALE
+"let g:ale_python_flake8_executable = 'python3'   " or 'python' for Python 2
+"let g:ale_python_flake8_options = '-m flake8'
 
 " Generate documentation tags automatically
 " https://github.com/w0rp/ale#generating-vim-help-files
