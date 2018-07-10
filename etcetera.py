@@ -17,6 +17,7 @@ LINK_PATHS = [
     '.oh-my-zsh',
     '.tmux.conf.local',
     '.vim',
+    '.Xmodmap',
 ]
 
 COPY_FILES = [
