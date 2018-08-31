@@ -7,6 +7,7 @@ This project includes [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and
 ```shell
 git clone https://github.com/quanbrew/etcetera.git .etcetera 
 ./.etcetera/etcetera.py
+chsh -s $(which zsh) # optional
 ```
 
 Open vim (at least version 8): `PlugInstall`
