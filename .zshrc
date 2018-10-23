@@ -30,3 +30,8 @@ HIST_STAMPS="yyyy-mm-dd"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zshrc.local.sh
+
+# pure https://github.com/sindresorhus/pure
+fpath=($HOME/.etcetera/fpath $fpath)
+autoload -U promptinit; promptinit
+prompt pure

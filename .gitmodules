@@ -7,3 +7,6 @@
 [submodule "vim-plug"]
 	path = vim-plug
 	url = https://github.com/junegunn/vim-plug.git
+[submodule "pure"]
+	path = pure
+	url = https://github.com/sindresorhus/pure.git
