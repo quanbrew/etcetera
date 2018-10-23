@@ -10,3 +10,6 @@
 [submodule "pure"]
 	path = pure
 	url = https://github.com/sindresorhus/pure.git
+[submodule "zsh-custom/themes/spaceship-prompt"]
+	path = zsh-custom/themes/spaceship-prompt
+	url = https://github.com/denysdovhan/spaceship-prompt.git

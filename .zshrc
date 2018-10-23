@@ -20,10 +20,11 @@ DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/.etcetera/zsh-custom
 
 
 source $ZSH/oh-my-zsh.sh
+export EDITOR='vim'
 source $HOME/.zshrc.local.sh
 
 # pure https://github.com/sindresorhus/pure
