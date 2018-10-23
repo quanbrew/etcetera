@@ -6,12 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 #ZSH_THEME="random"
-
-if [[ -n $SSH_CONNECTION ]]; then
-  ZSH_THEME="murilasso"
-else
-  ZSH_THEME="refined"
-fi
+ZSH_THEME=""
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"

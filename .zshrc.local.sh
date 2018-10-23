@@ -61,3 +61,7 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# macOS iTerm2
+# function server() {/usr/bin/ssh $@ -t "tmux -CC attach -t remote || tmux -CC new -s remote";}
+
