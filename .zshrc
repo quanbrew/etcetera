@@ -31,7 +31,9 @@ plugins=(
   zsh-autosuggestions
   pip
   git
+  zsh-completions
 )
+autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 source $HOME/.zshrc.local.sh
