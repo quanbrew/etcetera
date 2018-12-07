@@ -28,12 +28,14 @@ ZSH_CUSTOM=$HOME/.etcetera/zsh-custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-autosuggestions
   pip
   git
+  colored-man-pagesmma
   zsh-completions
+  zsh-syntax-highlighting
+  extract
+  z
 )
-autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 source $HOME/.zshrc.local.sh

@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH="$HOME/.cargo/bin:$PATH"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,3 +58,6 @@ export LANG=en_US.UTF-8
 # macOS iTerm2
 # function server() {/usr/bin/ssh $@ -t "tmux -CC attach -t remote || tmux -CC new -s remote";}
 
+# GPG Agent
+# export "GPG_TTY=$(tty)"
+# export "SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh"
