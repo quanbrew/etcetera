@@ -30,7 +30,7 @@ ZSH_CUSTOM=$HOME/.etcetera/zsh-custom
 plugins=(
   pip
   git
-  colored-man-pagesmma
+  colored-man-pages
   zsh-completions
   zsh-syntax-highlighting
   extract
