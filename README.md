@@ -19,3 +19,6 @@ Open vim (at least version 8): `PlugInstall`
 ./.etcetera/etcetera.py --rm
 ```
 
+## Recommend Programs
+
+fzf htop tmux httpie yarn jq wget you-get
