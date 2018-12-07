@@ -5,6 +5,7 @@ This project includes [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and
 ## Install and update
 
 ```shell
+# Install fzf first
 git clone https://github.com/quanbrew/etcetera.git .etcetera 
 ./.etcetera/etcetera.py
 chsh -s $(which zsh) # optional
