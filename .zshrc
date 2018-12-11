@@ -11,6 +11,9 @@ ZSH_THEME=""
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
+# Surpass Zsh compfix warnning.
+ZSH_DISABLE_COMPFIX="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
