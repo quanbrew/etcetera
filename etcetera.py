@@ -17,12 +17,11 @@ LINK_PATHS = [
     '.oh-my-zsh',
     '.tmux.conf.local',
     '.vim',
-    '.Xmodmap',
 ]
 
-COPY_FILES = [
-    '.zshrc.local.sh',
-]
+# COPY_FILES = [
+#     '.zshrc.local.sh',
+# ]
 
 
 def join(*args):
@@ -71,13 +70,13 @@ def main():
     for item in LINK_PATHS:
         run(['ln', '-sfn', join(ETC_PATH, item), join(HOME, item)])
 
-    for item in COPY_FILES:
-        src = join(ETC_PATH, item)
-        dest = join(HOME, item)
-        if not os.path.exists(dest):
-            copy(src, dest)
-        else:
-            print('file {} exists, skip'.format(src))
+    # for item in COPY_FILES:
+    #     src = join(ETC_PATH, item)
+    #     dest = join(HOME, item)
+    #     if not os.path.exists(dest):
+    #         copy(src, dest)
+    #     else:
+    #         print('file {} exists, skip'.format(src))
 
 
 if __name__ == '__main__':

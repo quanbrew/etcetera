@@ -28,6 +28,7 @@ set showmode " display current modes
 
 " Ident settings
 " http://linux-wiki.cn/wiki/zh-hans/Vim%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE
+set autoindent
 set smartindent
 set smarttab
 set shiftround
@@ -103,7 +104,6 @@ endif
 call plug#begin('~/.vim/plugged')
   Plug 'w0rp/ale'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'easymotion/vim-easymotion'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -112,41 +112,28 @@ call plug#begin('~/.vim/plugged')
   Plug 'majutsushi/tagbar'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
-  Plug 'kien/rainbow_parentheses.vim'
+  Plug 'luochen1990/rainbow'
+  Plug 'tpope/vim-repeat'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'tpope/vim-sleuth'
   Plug 'sonph/onehalf', {'rtp': 'vim/'}
-  " Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+  Plug 'justinmk/vim-sneak'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Airline
 let g:airline_powerline_fonts = 1
 
-" RAINBOW PARENTHESES
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'SteelBlue1'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'SteelBlue1'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'SteelBlue1'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'SteelBlue1'],
-    \ ]
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" Rainbow
+let g:rainbow_active = 1
+
+" Sneak
+let g:sneak#label = 1
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 " Color scheme
 syntax on

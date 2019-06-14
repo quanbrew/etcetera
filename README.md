@@ -21,4 +21,23 @@ Open vim (at least version 8): `PlugInstall`
 
 ## Recommend Programs
 
-fzf htop tmux httpie yarn jq wget you-get
+`ctags fzf htop tmux httpie yarn jq wget you-get p7zip`
+
+## vim
+
+<kbd>space</kbd>: vim **leader** key.
+
+<kbd>leader</kbd> + <kbd>N</kbd>: toggle line number display.
+
+<kbd>leader</kbd> + <kbd>P</kbd>: enable paste mode.
+
+<kbd>leader</kbd> + <kbd>/</kbd>: commit it.
+
+<kbd>leader</kbd> + <kbd>t</kbd>: toggle tagbar.
+
+<kbd>leader</kbd> + <kbd>w</kbd>: write file with sudo.
+
+## Plugin
+
+* [surround.vim](https://github.com/tpope/vim-surround)
+* [vim-sneak](https://github.com/justinmk/vim-sneak)
