@@ -285,10 +285,10 @@ tmux_conf_copy_to_os_clipboard=true
 #set -g mode-keys vi
 
 # replace C-b by C-q instead of using both prefixes
-# set -gu prefix2
+set -gu prefix2
 unbind C-a
 unbind C-b
-set -g `
+set -g prefix `
 bind ` send-prefix
 
 # move status line to top
