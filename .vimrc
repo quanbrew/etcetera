@@ -32,6 +32,7 @@ set autoindent
 set smartindent
 set smarttab
 set shiftround
+set expandtab
 
 set hlsearch
 set incsearch
