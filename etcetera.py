@@ -19,9 +19,9 @@ LINK_PATHS = [
     '.vim',
 ]
 
-# COPY_FILES = [
-#     '.zshrc.local.sh',
-# ]
+COPY_FILES = [
+    # '.zshrc.local.sh',
+]
 
 
 def join(*args):
